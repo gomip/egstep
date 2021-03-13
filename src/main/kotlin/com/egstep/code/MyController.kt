@@ -18,7 +18,7 @@ class MyController {
         val mv = ModelAndView()
         mv.viewName = "abc"
 
-        mv.addObject("user", User(name="zany"))
+        mv.addObject("user", User(name="junghoon"))
 
         return mv
     }
