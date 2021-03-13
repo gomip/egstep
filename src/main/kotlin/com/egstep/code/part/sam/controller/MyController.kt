@@ -1,10 +1,12 @@
 package com.egstep.code
 
+import com.egstep.code.part.sam.service.OneService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Value
+import org.springframework.context.ApplicationContext
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.servlet.ModelAndView
 
 @Controller
@@ -12,6 +14,9 @@ import org.springframework.web.servlet.ModelAndView
 class MyController {
 
     @Autowired lateinit var service: OneService
+    @Autowired lateinit var ctx: ApplicationContext
+
+    @Value("\${app.name}")lateinit var appName: String
 
     @GetMapping
     fun main(): ModelAndView {
@@ -23,6 +28,10 @@ class MyController {
         return mv
     }
 
+    @GetMapping("/sample")
+    fun sample(): String{
+        return appName
+    }
 }
 
 data class User(

@@ -1,4 +1,4 @@
-package com.egstep.code
+package com.egstep.fwk.config
 
 import nz.net.ultraq.thymeleaf.LayoutDialect
 import org.springframework.context.annotation.Bean
